@@ -17,10 +17,12 @@
 
 .rec {
   max-width: 300px;
+  min-width: 300px;
+  max-height: 250px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 1rem;
   margin: 5px;
 }
@@ -39,6 +41,8 @@
   font-family: 'Times New Roman', Times, serif;
   font-weight: 100;
   padding: 5px;
+  text-align: end;
+  font-size: 15px;
 }
 .r-thumb {
   margin: 2rem;

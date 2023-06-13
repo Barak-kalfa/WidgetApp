@@ -17,12 +17,13 @@ function renderSponsored(rec) {
                 title="${rec.name}"
                 src="${rec.thumbnail[0].url}"
                 onerror='this.src="images/No-Image-Placeholder.svg"'
+                alt="${rec.name}"
             /></a>
           </div>
           <div class="rec-title">
             <p>${rec.name}</p>
           </div>
-          <div class="rec-bottom">
+          <div class="rec-footer">
             <span>${rec.branding}</span>
             <p>${rec.origin}</p>
           </div>
@@ -40,6 +41,7 @@ function renderOrganic(rec) {
                 title="${rec.name}"
                 src="${rec.thumbnail[0].url}"
                 onerror='this.src="images/No-Image-Placeholder.svg"'
+                alt="${rec.name}"
             /></a>
           </div>
           <div class="rec-title">
