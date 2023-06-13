@@ -50,23 +50,27 @@ function renderOrganic(rec) {
 }
 
 async function getRec() {
-  const res = await fetch(`http://api.taboola.com/1.0/json/${options.publisherId}/recommendations.get?app.type=${options.appType}&app.apikey=${options.appApiKey}&count=4&source.type=video&source.id=${options.sourceId}&source.url=http://www.site.com/videos/214321562187.html`);
-  const data = await res.json()
-  data.list.forEach((rec) => {
-    if (options.typeFilter.includes(rec.origin)) {
-      switch (rec.origin) {
-        case "sponsored":
-          renderSponsored(rec);
-          break;
-        case "organic":
-          renderOrganic(rec);
-          break;
-        //add more cases for new types of recommendations
-        default:
-          console.log("Unknown origin: " + rec.origin);
+  try{
+    const res = await fetch(`http://api.taboola.com/1.0/json/${options.publisherId}/recommendations.get?app.type=${options.appType}&app.apikey=${options.appApiKey}&count=4&source.type=video&source.id=${options.sourceId}&source.url=http://www.site.com/videos/214321562187.html`);
+    const data = await res.json()
+    data.list.forEach((rec) => {
+      if (options.typeFilter.includes(rec.origin)) {
+        switch (rec.origin) {
+          case "sponsored":
+            renderSponsored(rec);
+            break;
+          case "organic":
+            renderOrganic(rec);
+            break;
+          //add more cases for new types of recommendations
+          default:
+            console.log("Unknown origin: " + rec.origin);
+        }
       }
-    }
-  });
+    });
+  }catch(e){
+    console.log(e.message);
+  }
 }
 
 getRec()

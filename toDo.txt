@@ -1,0 +1,4 @@
+build tests
+style
+make code nicer
+make default picture with title when img error

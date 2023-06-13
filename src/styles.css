@@ -22,6 +22,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+  margin: 5px;
 }
 
 .rec-title {
@@ -29,12 +30,12 @@
   font-weight: 900;
 }
 
-.rec-bottom span {
+.rec-footer span {
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 5px;
 }
 
-.rec-bottom p {
+.rec-footer p {
   font-family: 'Times New Roman', Times, serif;
   font-weight: 100;
   padding: 5px;
