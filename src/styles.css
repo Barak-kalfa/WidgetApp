@@ -1,0 +1,47 @@
+.widget{
+  min-width: 290px;
+}
+
+.w-header{
+  border-bottom: 1px solid black;
+}
+
+.recos-box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.rec {
+  padding: 1rem;
+  max-width: 200px;
+  border-radius: 5px;
+}
+
+.r-thumb {
+  margin: 2rem;
+}
+
+p {
+  margin: 0 0;
+}
+
+.rec-thumb {
+  width: 100%;
+  max-width: 300px; /* Adjust the maximum width as needed */
+  position: relative;
+  overflow: hidden;
+}
+
+.rec-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.rec:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
