@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "happy-dom": "^9.20.3",
+    "vitest": "^0.32.0"
+  },
+  "name": "taboolatest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest --environment happy-dom verbose",
+    "test:watch": "vitest "
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

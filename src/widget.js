@@ -1,12 +1,13 @@
 import options from "../widgetOptions.json" assert { type: "json" };
+import { getRecommendations } from "./getData.js";
 
 const widget = document.querySelector(".widget");
-widget.innerHTML = `<div class="w-header"><p>${options.title}</p></div>
+widget.innerHTML = `<div class="w-header"><p>${options.header}</p></div>
 <div class="w-box">
 </div>`;
 const widgetBox = document.querySelector(".w-box");
 
-function renderSponsored(rec) {
+export function renderSponsored(rec) {
   const sponsRec = document.createElement("div");
   sponsRec.classList.add("rec");
   sponsRec.innerHTML = `
@@ -31,7 +32,7 @@ function renderSponsored(rec) {
   widgetBox.appendChild(sponsRec);
 }
 
-function renderOrganic(rec) {
+export function renderOrganic(rec) {
   const orgRec = document.createElement("div");
   orgRec.classList.add("rec");
   orgRec.innerHTML = `
@@ -51,30 +52,5 @@ function renderOrganic(rec) {
   widgetBox.appendChild(orgRec);
 }
 
-async function getRec() {
-  try{
-    const res = await fetch(`http://api.taboola.com/1.0/json/${options.publisherId}/recommendations.get?app.type=${options.appType}&app.apikey=${options.appApiKey}&count=4&source.type=video&source.id=${options.sourceId}&source.url=http://www.site.com/videos/214321562187.html`);
-    const data = await res.json()
-    data.list.forEach((rec) => {
-      if (options.typeFilter.includes(rec.origin)) {
-        switch (rec.origin) {
-          case "sponsored":
-            renderSponsored(rec);
-            break;
-          case "organic":
-            renderOrganic(rec);
-            break;
-          //add more cases for new types of recommendations
-          default:
-            console.log("Unknown origin: " + rec.origin);
-        }
-      }
-    });
-  }catch(e){
-    console.log(e.message);
-  }
-}
 
-getRec()
-
-
+getRecommendations()
