@@ -1,4 +1,3 @@
-import mockData from "./mockData.json" assert { type: "json" };
 import options from "../widgetOptions.json" assert { type: "json" };
 
 const widget = document.querySelector(".widget");
@@ -25,7 +24,7 @@ function renderSponsored(rec) {
           </div>
           <div class="rec-bottom">
             <span>${rec.branding}</span>
-            <span>${rec.origin}</span>
+            <p>${rec.origin}</p>
           </div>
   `;
   widgetBox.appendChild(sponsRec);
