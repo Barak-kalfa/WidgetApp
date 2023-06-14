@@ -18,7 +18,7 @@ export function startWidget(widgetData, widget, settings) {
         }
         switch (rec.origin) {
           case "sponsored":
-            const sponsElement = createSponsored(rec, settings, widgetBox);
+            const sponsElement = createSponsored(rec, settings.sponsoredElement);
             sponsElement && widgetBox.appendChild(sponsElement);
             break;
           case "organic":

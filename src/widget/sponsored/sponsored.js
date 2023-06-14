@@ -1,6 +1,6 @@
-export function createSponsored(rec, settings) {
-  const sponsRec = document.createElement(settings.sponsored.element);
-  sponsRec.classList.add(settings.sponsored.className);
+export function createSponsored(rec, element) {
+  const sponsRec = document.createElement(element.type);
+  sponsRec.classList.add(element.className);
   sponsRec.id = rec.id;
   sponsRec.innerHTML = `
       <div class="rec-thumb">

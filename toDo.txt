@@ -9,7 +9,7 @@ It will have a "main element" option which comes with an array/object of attribu
 
 Add pagination (expand mock data)
 
-
+sliding description?
 make code nicer
 make responsive
 style
