@@ -1,14 +1,14 @@
 import { createSponsored } from "../sponsored/sponsored.js";
 import { createOrganic } from "../organic/organic.js";
 
-export function startWidget(widgetData, widget, options) {
+export function startWidget(widgetData, widget, settings) {
   try {
-    widget.innerHTML = `<div class="w-header"><p>${options.header}</p></div>
+    widget.innerHTML = `<div class="w-header"><p>${settings.header}</p></div>
 <div class="w-box">
 </div>`;
     const widgetBox = document.querySelector(".w-box");
     widgetData.list.forEach((rec) => {
-      if (options.typeFilter.includes(rec.origin)) {
+      if (settings.typeFilter.includes(rec.origin)) {
         switch (rec.origin) {
           case "sponsored":
             const sponsElement = createSponsored(rec);
