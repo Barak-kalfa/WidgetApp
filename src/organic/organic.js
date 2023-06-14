@@ -1,4 +1,4 @@
-export function renderOrganic(rec) {
+export function createOrganic(rec) {
   const orgRec = document.createElement("div");
   orgRec.classList.add("rec");
   orgRec.innerHTML = `

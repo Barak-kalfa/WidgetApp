@@ -1,4 +1,4 @@
-export function renderSponsored(rec) {
+export function createSponsored(rec) {
   const sponsRec = document.createElement("div");
   sponsRec.classList.add("rec");
   sponsRec.innerHTML = `

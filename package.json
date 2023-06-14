@@ -7,7 +7,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "vitest --environment happy-dom verbose",
+    "test": "vitest --environment happy-dom --reporter verbose",
     "test:watch": "vitest "
   },
   "author": "",

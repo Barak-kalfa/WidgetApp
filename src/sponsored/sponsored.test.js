@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { it, expect, describe, vi } from "vitest";
 import { Window } from "happy-dom";
-import { renderSponsored } from "./sponsored.js";
+import { createSponsored } from "./sponsored.js";
 
 const htmlDocPath = path.join(process.cwd(), "index.html");
 const htmlDoc = fs.readFileSync(htmlDocPath, "utf8").toString();
@@ -16,9 +16,9 @@ const rec = {
   name: "Test",
   thumbnail: [{url: "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg"}]
 };
-const element = renderSponsored(rec);
+const element = createSponsored(rec);
 
-it("renderOrganic() should return a div element", () => {
+it("createSponsored() should return a div element", () => {
   expect(element).not.toBeNull();
 });
 
@@ -27,3 +27,7 @@ it("div should have a class of rec", () => {
   expect(elementClass).toBeTruthy();
 });
 
+it("div should have a footer div", () => {
+  const footer = element.querySelector(".rec-footer");
+  expect(footer).not.toBeNull();
+});

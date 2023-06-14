@@ -1,6 +1,6 @@
 import options from "../../widgetOptions.json" assert { type: "json" };
-import { renderSponsored } from "../sponsored/sponsored.js";
-import { renderOrganic } from "../organic/organic.js";
+import { createSponsored } from "../sponsored/sponsored.js";
+import { createOrganic } from "../organic/organic.js";
 
 export function startWidget(widgetData, widget) {
   try {
@@ -12,11 +12,11 @@ export function startWidget(widgetData, widget) {
       if (options.typeFilter.includes(rec.origin)) {
         switch (rec.origin) {
           case "sponsored":
-            const sponsElement = renderSponsored(rec);
+            const sponsElement = createSponsored(rec);
             widgetBox.appendChild(sponsElement);
             break;
           case "organic":
-            const orgElement = renderOrganic(rec);
+            const orgElement = createOrganic(rec);
             widgetBox.appendChild(orgElement);
             break;
           //add more cases for new types of recommendations
