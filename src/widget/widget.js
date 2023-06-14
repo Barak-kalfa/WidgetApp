@@ -3,6 +3,6 @@ import { startWidget } from "./helper/startWidget.js";
 import settings from "./settings/widgetSettings.json" assert {type: 'json'};
 
 
-const widgetElement = document.querySelector(".widget");
+const widgetElement = document.querySelector("#widget");
 const widgetData = await getData(settings)
 startWidget(widgetData, widgetElement, settings);

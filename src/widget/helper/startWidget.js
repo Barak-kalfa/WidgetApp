@@ -18,7 +18,7 @@ export function startWidget(widgetData, widget, settings) {
             const orgElement = createOrganic(rec);
             widgetBox.appendChild(orgElement);
             break;
-          //add more cases for new types of recommendations
+          //add more cases for new types of widget elements
           default:
             console.log("Unknown origin: " + rec.origin);
         }
