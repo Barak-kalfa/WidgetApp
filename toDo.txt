@@ -1,8 +1,17 @@
 build tests
 handle errors
-style
-make responsive
-write instructions
 make compatible
-make code nicer
 make default picture with title when img error => uses id to remove and create a new element => returns report of the error with object of failed rec
+
+Do changes in new branch (old save in new branch named dedicated rendering)
+
+Change to one render element with options.
+It will have a "main element" option which comes with an array/object of attributes that will be SPREAD  on the element
+
+Add pagination (expand mock data)
+
+
+make code nicer
+make responsive
+style
+write instructions

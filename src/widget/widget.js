@@ -6,4 +6,4 @@ import mockData from "./tests-settings/testsMockData.json" assert {type: 'json'}
 
 const widgetElement = document.querySelector("#widget");
 const widgetData = await getData(settings)
-startWidget(mockData, widgetElement, settings);
+startWidget(widgetData, widgetElement, settings);
