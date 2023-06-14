@@ -1,13 +1,13 @@
 export function createElement(rec, element) {
 
-  const RecElement = document.createElement(element.type);
+  const RecElement = document.createElement(element.elementType);
   RecElement.classList.add(element.className);
   RecElement.id = rec.id;
   RecElement.innerHTML = `
         <a href="${rec.url}" target="_blank">
           <div class="rec-thumb">
             
-          
+
           </div>
           ${element.title ? `<div class="rec-title">
           <p>${rec.name}</p>`: ""}

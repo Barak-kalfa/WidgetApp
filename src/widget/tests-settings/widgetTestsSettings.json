@@ -1,8 +1,24 @@
 {
   "header": "this is a test header:",
-  "typeFilter": ["organic"],
+  "typeFilter": ["sponsored"],
   "publisherId": "taboola-templates",
   "appType": "desktop",
   "appApiKey": "f9040ab1b9c802857aa783c469d0e0ff7e7366e4",
-  "sourceId": "bk-taboola-test"
+  "sourceId": "bk-taboola-test",
+  "type": {
+    "organic": {
+      "elementType": "div",
+      "className": "rec",
+      "title": true,
+      "footer": false,
+      "outboundLink": false
+    },
+    "sponsored": {
+      "elementType": "div",
+      "className": "rec",
+      "title": true,
+      "footer": true,
+      "outboundLink": true
+    }
+  }
 }

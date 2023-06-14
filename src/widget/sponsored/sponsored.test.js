@@ -3,31 +3,35 @@ import path from "path";
 import { it, expect, describe, vi } from "vitest";
 import { Window } from "happy-dom";
 import { createSponsored } from "./sponsored.js";
-
+import testSettings from "../tests-settings/widgetTestsSettings.json";
+import testData from "../tests-settings/testsMockData.json";
 const htmlDocPath = path.join(process.cwd(), "index.html");
 const htmlDoc = fs.readFileSync(htmlDocPath, "utf8").toString();
 const window = new Window();
 const document = window.document;
 document.write(htmlDoc);
-vi.stubGlobal('document', document);
+vi.stubGlobal("document", document);
 
-const rec = {
-  url: "http://127.0.0.1:5500/",
-  name: "Test",
-  thumbnail: [{url: "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg"}]
-};
-const element = createSponsored(rec);
+describe("testing createSponsored()", () => {
+  const sponsoredList = testData.list.filter(
+    (rec) => rec.origin === "sponsored"
+  );
+  const element = createSponsored(
+    sponsoredList[0],
+    testSettings.type.sponsored
+  );
 
-it("createSponsored() should return a div element", () => {
-  expect(element).not.toBeNull();
-});
+  it("should return an element", () => {
+    expect(element).not.toBeNull();
+  });
 
-it("div should have a class of rec", () => {
-  const elementClass = element.classList.contains("rec")
-  expect(elementClass).toBeTruthy();
-});
+  it("div should have a class of rec", () => {
+    const recClass = element.classList.contains("rec");
+    expect(recClass).toBeTruthy();
+  });
 
-it("div should have a footer div", () => {
-  const footer = element.querySelector(".rec-footer");
-  expect(footer).not.toBeNull();
+  it("div should have a footer div", () => {
+    const footer = element.querySelector(".rec-footer");
+    expect(footer).not.toBeNull();
+  });
 });

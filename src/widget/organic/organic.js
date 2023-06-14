@@ -1,5 +1,5 @@
 export function createOrganic(rec, element) {
-  const orgRec = document.createElement(element.type);
+  const orgRec = document.createElement(element.elementType);
   orgRec.classList.add(element.className);
   orgRec.id = rec.id;
   orgRec.innerHTML = `

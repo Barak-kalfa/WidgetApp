@@ -1,7 +1,6 @@
 import { createSponsored } from "../sponsored/sponsored.js";
 import { createOrganic } from "../organic/organic.js";
 import { recordError } from "../error/handleError.js";
-import { createElement } from "./createElement.js";
 
 export function startWidget(widgetData, widget, settings) {
   try {

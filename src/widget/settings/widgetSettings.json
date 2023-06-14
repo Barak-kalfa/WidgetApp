@@ -7,14 +7,14 @@
   "sourceId": "bk-taboola-test",
   "type": {
     "organic": {
-      "type": "div",
+      "elementType": "div",
       "className": "rec",
       "title": true,
       "footer": false,
       "outboundLink": false
     },
     "sponsored": {
-      "type": "div",
+      "elementType": "div",
       "className": "rec",
       "title": true,
       "footer": true,

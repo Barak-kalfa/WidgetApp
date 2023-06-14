@@ -2,8 +2,9 @@ import fs from "fs";
 import path from "path";
 import { it, expect, describe, vi } from "vitest";
 import { Window } from "happy-dom";
-import { createOrganic } from "./organic";
-
+import { createOrganic } from "./organic.js";
+import testSettings from "../tests-settings/widgetTestsSettings.json";
+import testData from "../tests-settings/testsMockData.json";
 const htmlDocPath = path.join(process.cwd(), "index.html");
 const htmlDoc = fs.readFileSync(htmlDocPath, "utf8").toString();
 const window = new Window();
@@ -11,30 +12,25 @@ const document = window.document;
 document.write(htmlDoc);
 vi.stubGlobal("document", document);
 
-describe("Testing createOrganic()", () => {
-  const rec = {
-    url: "http://127.0.0.1:5500/",
-    name: "Test",
-    thumbnail: [
-      {
-        url: "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg",
-      },
-    ],
-  };
-  const element = createOrganic(rec);
+describe("testing createOrganic()", () => {
+  const organicList = testData.list.filter(
+    (rec) => rec.origin === "organic"
+  );
+  const element = createOrganic(
+    organicList[0],
+    testSettings.type.organic
+  );
 
-  it(" should return an HTML element", () => {
-    const testElement = document.createElement("div");
-    testElement.classList.add("rec");
-    expect(element).toEqual();
+  it("should return an element", () => {
+    expect(element).not.toBeNull();
   });
 
   it("div should have a class of rec", () => {
-    const elementClass = element.classList.contains("rec");
-    expect(elementClass).toBeTruthy();
+    const recClass = element.classList.contains("rec");
+    expect(recClass).toBeTruthy();
   });
 
-  it("div should not have a footer", () => {
+  it("div should not have a footer div", () => {
     const footer = element.querySelector(".rec-footer");
     expect(footer).toBeNull();
   });

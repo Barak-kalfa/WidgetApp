@@ -1,6 +1,5 @@
 export function createSponsored(rec, element) {
-
-  const sponsRec = document.createElement(element.type);
+  const sponsRec = document.createElement(element.elementType);
   sponsRec.classList.add(element.className);
   sponsRec.id = rec.id;
   sponsRec.innerHTML = `
