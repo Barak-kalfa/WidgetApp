@@ -3,7 +3,7 @@ import path from "path";
 import { it, expect, describe, vi } from "vitest";
 import { Window } from "happy-dom";
 import { startWidget } from "./startWidget.js";
-import testData from "../../testsMockData.json";
+import testData from "../tests-settings/testsMockData.json";
 import testSettings from "../tests-settings/widgetTestsSettings.json";
 
 const htmlDocPath = path.join(process.cwd(), "index.html");
