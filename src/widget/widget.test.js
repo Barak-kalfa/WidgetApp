@@ -11,7 +11,7 @@ const document = window.document;
 document.write(htmlDoc);
 vi.stubGlobal('document', document);
 
-it('should locate a div with a class of widget', ()=>{
-  const widget = document.querySelector('.widget');
+it('should locate a div with a id of widget', ()=>{
+  const widget = document.querySelector('#widget');
   expect(widget).not.toBeNull();
 })

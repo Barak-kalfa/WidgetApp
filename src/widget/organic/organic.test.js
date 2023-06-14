@@ -11,20 +11,22 @@ const document = window.document;
 document.write(htmlDoc);
 vi.stubGlobal("document", document);
 
-const rec = {
-  url: "http://127.0.0.1:5500/",
-  name: "Test",
-  thumbnail: [
-    {
-      url: "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg",
-    },
-  ],
-};
-const element = createOrganic(rec);
+describe("Testing createOrganic()", () => {
+  const rec = {
+    url: "http://127.0.0.1:5500/",
+    name: "Test",
+    thumbnail: [
+      {
+        url: "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg",
+      },
+    ],
+  };
+  const element = createOrganic(rec);
 
-describe("Testing organic elements", () => {
-  it("createOrganic() should return a div element", () => {
-    expect(element).not.toBeNull();
+  it(" should return an HTML element", () => {
+    const testElement = document.createElement("div");
+    testElement.classList.add("rec");
+    expect(element).toEqual();
   });
 
   it("div should have a class of rec", () => {

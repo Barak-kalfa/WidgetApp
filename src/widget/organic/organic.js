@@ -1,6 +1,6 @@
-export function createOrganic(rec) {
-  const orgRec = document.createElement("div");
-  orgRec.classList.add("rec");
+export function createOrganic(rec, settings) {
+  const orgRec = document.createElement(settings.organic.element);
+  orgRec.classList.add(settings.organic.className);
   orgRec.innerHTML = `
       <div class="rec-thumb">
             <a href="${rec.url}"

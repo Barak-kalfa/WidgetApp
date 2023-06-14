@@ -1,8 +1,8 @@
+build tests
+handle errors
+style
 make responsive
 write instructions
 make compatible
-handle errors
-build tests
-style
 make code nicer
 make default picture with title when img error => uses id to remove and create a new element => returns report of the error with object of failed rec

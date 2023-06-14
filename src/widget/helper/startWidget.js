@@ -11,11 +11,11 @@ export function startWidget(widgetData, widget, settings) {
       if (settings.typeFilter.includes(rec.origin)) {
         switch (rec.origin) {
           case "sponsored":
-            const sponsElement = createSponsored(rec);
+            const sponsElement = createSponsored(rec, settings);
             widgetBox.appendChild(sponsElement);
             break;
           case "organic":
-            const orgElement = createOrganic(rec);
+            const orgElement = createOrganic(rec, settings);
             widgetBox.appendChild(orgElement);
             break;
           //add more cases for new types of widget elements
