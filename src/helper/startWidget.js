@@ -1,8 +1,7 @@
-import options from "../../widgetOptions.json" assert { type: "json" };
 import { createSponsored } from "../sponsored/sponsored.js";
 import { createOrganic } from "../organic/organic.js";
 
-export function startWidget(widgetData, widget) {
+export function startWidget(widgetData, widget, options) {
   try {
     widget.innerHTML = `<div class="w-header"><p>${options.header}</p></div>
 <div class="w-box">

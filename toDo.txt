@@ -3,3 +3,4 @@ style
 make code nicer
 make default picture with title when img error
 make responsive
+write instructions

@@ -1,6 +1,5 @@
-import options from "../../widgetOptions.json" assert { type: "json" };
 
-export async function getData(){
+export async function getData(options){
   const response = await fetch(
     `http://api.taboola.com/1.0/json/${options.publisherId}/recommendations.get?app.type=${options.appType}&app.apikey=${options.appApiKey}&count=4&source.type=video&source.id=${options.sourceId}&source.url=http://www.site.com/videos/214321562187.html`
   );
