@@ -5,19 +5,20 @@
   "appType": "desktop",
   "appApiKey": "f9040ab1b9c802857aa783c469d0e0ff7e7366e4",
   "sourceId": "bk-taboola-test",
-  "organicElement": {
-    "type": "div",
-    "className": "rec",
-    "centerElement": "img",
-    "title": true
-
-  },
-  "sponsoredElement": {
-    "type": "div",
-    "className": "rec",
-    "centerElement": "img",
-    "centerElementAttributes": [],
-    "title": true,
-    "footer": true
+  "type": {
+    "organic": {
+      "type": "div",
+      "className": "rec",
+      "title": true,
+      "footer": false,
+      "outboundLink": false
+    },
+    "sponsored": {
+      "type": "div",
+      "className": "rec",
+      "title": true,
+      "footer": true,
+      "outboundLink": true
+    }
   }
 }

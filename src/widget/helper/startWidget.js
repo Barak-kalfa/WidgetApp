@@ -1,6 +1,7 @@
 import { createSponsored } from "../sponsored/sponsored.js";
 import { createOrganic } from "../organic/organic.js";
 import { recordError } from "../error/handleError.js";
+import { createElement } from "./createElement.js";
 
 export function startWidget(widgetData, widget, settings) {
   try {
@@ -18,12 +19,12 @@ export function startWidget(widgetData, widget, settings) {
         }
         switch (rec.origin) {
           case "sponsored":
-            const sponsElement = createSponsored(rec, settings.sponsoredElement);
+            const sponsElement = createSponsored(rec, settings.type.sponsored);
             sponsElement && widgetBox.appendChild(sponsElement);
             break;
           case "organic":
-            const orgElement = createOrganic(rec, settings, widgetBox);
-            widgetBox.appendChild(orgElement);
+            const orgElement = createOrganic(rec, settings.type.organic);
+            orgElement && widgetBox.appendChild(orgElement);
             break;
           //add more cases for new types of widget elements
           default:
