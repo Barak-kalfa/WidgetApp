@@ -2,6 +2,7 @@ export const failedRecommendations = [];
 
 export function recordError(rec) {
   failedRecommendations.push(rec);
+  console.log("ERROR - failed recommendations:", failedRecommendations);
 }
 
 export function createSponsoredWithNoImg(rec, settings) {

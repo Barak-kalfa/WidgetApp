@@ -11,7 +11,7 @@ export function startWidget(widgetData, widget, settings) {
     widgetData.list.forEach((rec) => {
       if (settings.typeFilter.includes(rec.origin)) {
         for (const field in rec) {
-          if (!field) {
+          if (!rec[field]) {
             recordError(rec);
             return;
           }
