@@ -15,12 +15,14 @@ Setting up the widget:
 
 Settings Legend:
 
-  "HTMLwidgetId": "WIDGET ID AS IN HTML FILE", (string)
-  "innerElementId": "PICK INNER ELEMENT ID", (string)
-  "header": "PICK WIDGET HEADER", (string)
-  "textColor": "PICK COLOR FOR WIDGET TEXT", (string)
-  "backgroundColor": "PICK WIDGET BACKGROUND COLOR", (string)
-  "typeFilter": ["PICK REC TYPES TO RENDER"], (string)
+  "general":
+
+    "HTMLwidgetId": "WIDGET ID AS IN HTML FILE", (string)
+    "innerElementId": "PICK INNER ELEMENT ID", (string)
+    "header": "PICK WIDGET HEADER", (string)
+    "textColor": "PICK COLOR FOR WIDGET TEXT", (string)
+    "backgroundColor": "PICK WIDGET BACKGROUND COLOR", (string)
+    "typeFilter": ["PICK REC TYPES TO RENDER"], (string)
 
   "api": 
 
