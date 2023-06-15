@@ -4,6 +4,7 @@ import { validateRecommendation } from "../error/handleError.js";
 export function startWidget(widgetData, widget, settings) {
   try {
     widget.style.color = settings.textColor || "black";
+    widget.style.backgroundColor = settings.backgroundColor || "transparent";
     widget.innerHTML = `<div class="w-header"><p>${settings.header}</p></div>
 <div class="w-box">
 </div>`;
