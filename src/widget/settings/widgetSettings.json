@@ -13,14 +13,16 @@
       "className": "rec",
       "title": true,
       "footer": false,
-      "outboundLink": false
+      "outboundLink": false,
+      "showWithoutImg": false
     },
     "sponsored": {
       "elementType": "div",
       "className": "rec",
       "title": true,
       "footer": true,
-      "outboundLink": true
+      "outboundLink": true,
+      "showWithoutImg": false
     }
   }
 }

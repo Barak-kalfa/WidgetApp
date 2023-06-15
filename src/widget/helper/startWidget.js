@@ -1,5 +1,5 @@
 import { createRecommendation } from "./createRec.js";
-import { recordError } from "../error/handleError.js";
+import { validateRecommendation } from "../error/handleError.js";
 
 export function startWidget(widgetData, widget, settings) {
   try {
@@ -8,20 +8,12 @@ export function startWidget(widgetData, widget, settings) {
 </div>`;
     const widgetBox = document.querySelector(".w-box");
     widgetData.list.forEach((rec) => {
-      if (settings.typeFilter.includes(rec.origin)) {
-        for (const field in rec) {
-          if (!rec[field]) {
-            recordError(rec);
-            return;
-          }
-          if (!/\.(jpeg|jpg|png|gif)\b/i.test(rec.thumbnail[0].url)) {
-            recordError(rec);
-            return;
-          }
+      if (settings.typeFilter.indexOf(rec.origin) !== -1) {
+        if (validateRecommendation(rec)) {
+          widgetBox.appendChild(
+            createRecommendation(rec, settings.type[rec.origin])
+          );
         }
-        widgetBox.appendChild(
-          createRecommendation(rec, settings.type[rec.origin])
-        );
       }
     });
   } catch (e) {
