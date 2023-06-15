@@ -1,5 +1,6 @@
 {
   "header": "You might also be interested in:",
+  "textColor": "black",
   "typeFilter": ["sponsored"],
   "api": {
     "publisherId": "taboola-templates",
