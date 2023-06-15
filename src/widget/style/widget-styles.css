@@ -24,7 +24,7 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  margin: 5px;
+  margin: 10px;
 }
 .rec:hover {
   transform: scale(1.1);

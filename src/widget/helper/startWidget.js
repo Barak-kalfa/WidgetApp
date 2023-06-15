@@ -1,5 +1,4 @@
-import { createSponsored } from "../sponsored/sponsored.js";
-import { createOrganic } from "../organic/organic.js";
+import { createRecommendation } from "./createRec.js";
 import { recordError } from "../error/handleError.js";
 
 export function startWidget(widgetData, widget, settings) {
@@ -10,25 +9,16 @@ export function startWidget(widgetData, widget, settings) {
     const widgetBox = document.querySelector(".w-box");
     widgetData.list.forEach((rec) => {
       if (settings.typeFilter.includes(rec.origin)) {
+        //checking for missing fields if missing => cancel rendering:
         for (const field in rec) {
           if (!rec[field]) {
             recordError(rec);
             return;
           }
         }
-        switch (rec.origin) {
-          case "sponsored":
-            const sponsElement = createSponsored(rec, settings.type.sponsored);
-            sponsElement && widgetBox.appendChild(sponsElement);
-            break;
-          case "organic":
-            const orgElement = createOrganic(rec, settings.type.organic);
-            orgElement && widgetBox.appendChild(orgElement);
-            break;
-          //add more cases for new types of widget elements
-          default:
-            console.log("Unknown origin: " + rec.origin);
-        }
+        widgetBox.appendChild(
+          createRecommendation(rec, settings.type[rec.origin])
+        );
       }
     });
   } catch (e) {
