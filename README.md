@@ -45,6 +45,6 @@ How to use the widget settings:
 1. Choose a header string for the widget with the "header" field.
 2. Choose which types of recommendations to render by adding their name to the "typeFilter" array.
 3. Enter API settings in the "api" field.
-4. Choose settings for recommendations types. You can use the "Settings Legend:" above for reference.
+4. Sponsored and Organic recommendations are pre-defined and styled, but you can custom them to your liking, use the "Settings Legend:" above for reference and add css.
 
 The widget is ready to go.

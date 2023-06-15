@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { it, expect, describe, vi } from "vitest";
 import { Window } from "happy-dom";
-import { startWidget } from "./startWidget.js";
+import { startWidget } from "../helper/startWidget.js";
 import testData from "../tests-settings/testsMockData.json";
 import testSettings from "../tests-settings/widgetTestsSettings.json";
 

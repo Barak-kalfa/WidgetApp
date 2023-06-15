@@ -1,23 +1,25 @@
 function createThumb(rec) {
   switch (rec.origin) {
     case "sponsored":
-      return `<div class="rec-thumb" style="background-image: url(${rec.thumbnail[0].url})">
+      return `<div class="rec-thumb" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
       </div>`;
     case "organic":
-      return `<div class="rec-thumb" style="background-image: url(${rec.thumbnail[0].url})">
+      return `<div class="rec-thumb" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
         </div>`;
+    case "failed-image":
+      return `<div class="rec-thumb" style="background-image:`
     //Add more cases for new recommendations types
     default:
-      return `<div class="rec-thumb" style="background-image: url(${rec.thumbnail[0].url})">
+      return `<div class="rec-thumb" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
         </div>`;
   }
 }
 
 export function createRecommendation(rec, element) {
-  const sponsRec = document.createElement(element.elementType);
-  sponsRec.classList.add(element.className);
-  sponsRec.id = rec.id;
-  sponsRec.innerHTML = `
+  const recElement = document.createElement(element.elementType);
+  recElement.classList.add(element.className);
+  recElement.id = rec.id;
+  recElement.innerHTML = `
         <a href="${rec.url}" ${element.outboundLink ? 'target="_blank"' : ""}>
           ${createThumb(rec)}
           ${
@@ -37,5 +39,5 @@ export function createRecommendation(rec, element) {
           }
           </a>
   `;
-  return sponsRec;
+  return recElement;
 }

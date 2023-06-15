@@ -3,10 +3,6 @@ handle errors
 make compatible
 make default picture with title when img error => uses id to remove and create a new element => returns report of the error with object of failed rec
 
-
-Change to one render element with options.
-It will have a "main element" option which comes with an array/object of attributes that will be SPREAD  on the element
-
 Add pagination (expand mock data)
 
 sliding description?

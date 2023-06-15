@@ -9,9 +9,12 @@ export function startWidget(widgetData, widget, settings) {
     const widgetBox = document.querySelector(".w-box");
     widgetData.list.forEach((rec) => {
       if (settings.typeFilter.includes(rec.origin)) {
-        //checking for missing fields if missing => cancel rendering:
         for (const field in rec) {
           if (!rec[field]) {
+            recordError(rec);
+            return;
+          }
+          if (!/\.(jpeg|jpg|png|gif)\b/i.test(rec.thumbnail[0].url)) {
             recordError(rec);
             return;
           }
