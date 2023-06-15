@@ -14,25 +14,21 @@ Setting up the widget:
 
 
 Settings Legend:
+  
+  "HTMLwidgetId": "WIDGET ID AS IN HTML FILE", (string)
+  "innerElementId": "PICK INNER ELEMENT ID", (string)
+  "header": "PICK WIDGET HEADER", (string)
+  "textColor": "PICK COLOR FOR WIDGET TEXT", (string)
+  "backgroundColor": "PICK WIDGET BACKGROUND COLOR", (string)
+  "typeFilter": ["PICK REC TYPES TO RENDER"], (string)
 
-  "general":
-
-    "HTMLwidgetId": "WIDGET ID AS IN HTML FILE", (string)
-    "innerElementId": "PICK INNER ELEMENT ID", (string)
-    "header": "PICK WIDGET HEADER", (string)
-    "textColor": "PICK COLOR FOR WIDGET TEXT", (string)
-    "backgroundColor": "PICK WIDGET BACKGROUND COLOR", (string)
-    "typeFilter": ["PICK REC TYPES TO RENDER"], (string)
-
-  "api": 
-
+  api:
     "publisherId": "API DETAILS", (string)
     "appType": "API DETAILS", (string)
     "appApiKey": "API DETAILS", (string)
     "sourceId": "API DETAILS", (string)
 
-  "type":
-
+  type:
       "organic": 
         "elementType": "PICK ORGANIC ELEMENT TYPE", (string)
         "className": "PICK ORGANIC ELEMENT CLASS", (string)
