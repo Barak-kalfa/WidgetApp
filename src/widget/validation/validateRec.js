@@ -21,7 +21,6 @@ export function validateRecommendation(rec, settings) {
     try {
       const http = new XMLHttpRequest();
       http.open("HEAD", rec.url, false);
-      console.log(rec.url);
       http.send();
       if (http.status != 404) {
         return true;
@@ -37,7 +36,7 @@ export function validateRecommendation(rec, settings) {
     }
   };
 
-  const isValidateImgType = () => {
+  const isValidateThumbnailType = () => {
     if (!/\.(jpeg|jpg|png|gif|svg)\b/i.test(rec.thumbnail[0].url)) {
       rec.error = "Image file not supported";
       recordError(rec);
@@ -46,5 +45,5 @@ export function validateRecommendation(rec, settings) {
       return true;
     }
   };
-  return noEmptyFields() && isValidateURL() && isValidateImgType();
+  return noEmptyFields() && isValidateURL() && isValidateThumbnailType();
 }

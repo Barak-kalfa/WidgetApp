@@ -1,12 +1,2 @@
-build tests
-handle errors
-make compatible
-make default picture with title when img error => uses id to remove and create a new element => returns report of the error with object of failed rec
-
+make api url dynamic
 Add pagination (expand mock data)
-
-sliding description?
-make code nicer
-make responsive
-style
-write instructions

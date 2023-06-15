@@ -7,9 +7,6 @@ export function createThumb(rec, element) {
       return `<${element.thumbElementType} class="${element.thumbElementClass}" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
       </${element.thumbElementType}>`;
     //Add more cases for new recommendations types
-    default:
-      return `<${element.thumbElementType} class="${element.thumbElementClass}" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
-      </${element.thumbElementType}>`;
   }
 }
 

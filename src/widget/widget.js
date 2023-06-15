@@ -6,7 +6,7 @@ import mockData from "./tests/tests-settings/testsMockData.json" assert { type: 
 async function startWidget(settings) {
   const widget = document.getElementById(settings.HTMLwidgetId);
   const widgetData = await getData(settings);
-  createWidget(mockData, widget, settings);
+  createWidget(widgetData, widget, settings);
 }
 
 startWidget(settings);
