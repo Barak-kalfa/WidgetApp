@@ -1,5 +1,5 @@
 import { createRecommendation } from "./createRec.js";
-import { validateRecommendation } from "../validation/RecValidation.js";
+import { validateRecommendation } from "../validation/validateRec.js";
 
 export function createWidget(widgetData, widget, settings) {
   try {

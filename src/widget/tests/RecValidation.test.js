@@ -1,45 +1,33 @@
 import { it, expect, describe } from "vitest";
 import TEST_SETTINGS from "./tests-settings/widgetTestsSettings.json";
-import { validateRecommendation } from "../validation/RecValidation.js";
+import { validateRecommendation } from "../validation/validateRec.js";
 
+describe("testing recValidation()", () => {
 it("it should return false if one of the fields is null", () => {
-  const shouldBeTrue = validateRecommendation({ a: "1" }, TEST_SETTINGS);
-  const shouldBeFalse = validateRecommendation({ a: "" }, TEST_SETTINGS);
+  const rec = { thumbnail: [{ url: "abc.png" }] };
+  const rec2 = { thumbnail: "" };
+  const shouldBeTrue = validateRecommendation(rec, TEST_SETTINGS);
+  const shouldBeFalse = validateRecommendation(rec2, TEST_SETTINGS);
 
-  expect(shouldBeTrue).toBeTrue();
+  expect(shouldBeTrue).toBeTruthy();
   expect(shouldBeFalse).toBeFalsy();
 });
 
 it("should return false if the image url doesn't end with the right file type", () => {
-  const jpgShouldBeTrue = validateRecommendation(
-    { thumbnail: [{ url: "abc.jpg" }] },
-    TEST_SETTINGS
-  );
-  const pngShouldBeTrue = validateRecommendation(
-    { thumbnail: [{ url: "abc.png" }] },
-    TEST_SETTINGS
-  );
-  const svgShouldBeTrue = validateRecommendation(
-    { thumbnail: [{ url: "abc.svg" }] },
-    TEST_SETTINGS
-  );
-  const gifShouldBeTrue = validateRecommendation(
-    { thumbnail: [{ url: "abc.gif" }] },
-    TEST_SETTINGS
-  );
-  const jpegShouldBeTrue = validateRecommendation(
-    { thumbnail: [{ url: "abc.jpeg" }] },
-    TEST_SETTINGS
-  );
-  const jsShouldBeFalse = validateRecommendation(
-    { thumbnail: [{ url: "abc.js" }] },
-    TEST_SETTINGS
-  );
-
-  expect(jpgShouldBeTrue).toBeTrue();
-  expect(pngShouldBeTrue).toBeTrue();
-  expect(svgShouldBeTrue).toBeTrue();
-  expect(gifShouldBeTrue).toBeTrue();
-  expect(jpegShouldBeTrue).toBeTrue();
-  expect(jsShouldBeFalse).toBeFalsy();
+  const imgTypes = ["jpg", "png", "svg", "gif", "jpeg"];
+  imgTypes.forEach((type) => {
+    const rec = {
+      origin: TEST_SETTINGS.typeFilter[0],
+      thumbnail: [{ url: `abc.${type}` }],
+    };
+    const shouldBeTrue = validateRecommendation(rec, TEST_SETTINGS);
+    expect(shouldBeTrue).toBeTruthy();
+  });
+  const rec = {
+    origin: TEST_SETTINGS.typeFilter[0],
+    thumbnail: [{ url: "abc.js" }],
+  };
+  const shouldBeFalse = validateRecommendation(rec, TEST_SETTINGS);
+  expect(shouldBeFalse).toBeFalsy();
+});
 });
