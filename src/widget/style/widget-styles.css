@@ -16,6 +16,8 @@
   display: flex;
   flex-wrap: wrap;
   padding: 1rem;
+  /* justify-content: center; */
+  justify-content: space-around;
 }
 
 .rec {
