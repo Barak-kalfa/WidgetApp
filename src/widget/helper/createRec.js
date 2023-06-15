@@ -25,10 +25,10 @@ export function createRecommendation(rec, element) {
           ${
             element.title
               ? `<div class="rec-title">
-          <p>${rec.name}</p>`
+          <p>${rec.name}</p>
+          </div>`
               : ""
-          }
-          </div>
+            }
           ${
             element.footer
               ? `<div class="rec-footer">

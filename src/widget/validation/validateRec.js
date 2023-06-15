@@ -1,7 +1,7 @@
 const failedRecommendations = [];
 export function recordError(rec) {
   failedRecommendations.push(rec);
-  console.log("ERROR - failed recommendations:", failedRecommendations);
+  console.log("ERROR - failed recommendation:", rec);
   // would add a post request for logging errors somewhere
 }
 
@@ -26,7 +26,7 @@ export function validateRecommendation(rec, settings) {
         const dummyAnchor = document.createElement("a");
         dummyAnchor.href = rec.url;
         if (dummyAnchor.href === "") {
-          rec.error = "Invalid URL1";
+          rec.error = "Invalid URL";
           recordError(rec);
           return false;
         }
