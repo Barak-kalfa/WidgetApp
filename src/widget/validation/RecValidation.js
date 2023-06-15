@@ -1,4 +1,3 @@
-import settings from "../settings/widgetSettings.json" assert {type: 'json'};
 
 const failedRecommendations = [];
 export function recordError(rec) {
@@ -7,7 +6,7 @@ export function recordError(rec) {
   // would add a post request for logging errors somewhere
 }
 
-export function validateRecommendation(rec){
+export function validateRecommendation(rec, settings){
   for (const field in rec) {
     if (rec[field] === "") {
       rec.error = "Empty field"
@@ -15,7 +14,7 @@ export function validateRecommendation(rec){
       return false;
     }
   }
-    if (!/\.(jpeg|jpg|png|gif)\b/i.test(rec.thumbnail[0].url)) {
+    if (!/\.(jpeg|jpg|png|gif|svg)\b/i.test(rec.thumbnail[0].url)) {
       rec.error = "Image file not supported"
       recordError(rec);
       return settings.type[rec.origin].showWithoutImg;

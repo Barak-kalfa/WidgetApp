@@ -11,7 +11,7 @@ export function createWidget(widgetData, widget, settings) {
     const widgetBox = document.getElementById(settings.innerElementId);
     widgetData.list.forEach((rec) => {
       if (settings.typeFilter.indexOf(rec.origin) !== -1) {
-        if (validateRecommendation(rec)) {
+        if (validateRecommendation(rec, settings)) {
           widgetBox.appendChild(
             createRecommendation(rec, settings.type[rec.origin])
           );
