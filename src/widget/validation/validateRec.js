@@ -12,35 +12,29 @@ export function validateRecommendation(rec, settings) {
         rec.error = "Empty Field or Array";
         recordError(rec);
         return false;
-      } 
+      }
     }
     return true;
   };
 
   const isValidateURL = () => {
-    //using regex pattern:
-    const validURLpattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
-    if (validURLpattern.test(rec.url)) {
-      try {
-        //if regex passed checking for old browsers:
-        const dummyAnchor = document.createElement("a");
-        dummyAnchor.href = rec.url;
-        if (dummyAnchor.href === "") {
-          rec.error = "Invalid URL";
-          recordError(rec);
-          return false;
-        }
-      } catch (error) {
-        rec.error = "Invalid URL";
+    try {
+      const http = new XMLHttpRequest();
+      http.open("HEAD", rec.url, false);
+      console.log(rec.url);
+      http.send();
+      if (http.status != 404) {
+        return true;
+      } else {
+        rec.error = "page not found";
         recordError(rec);
         return false;
       }
-    } else {
-      rec.error = "Invalid URL";
+    } catch (e) {
+      rec.error = "invalid URL";
       recordError(rec);
       return false;
     }
-    return true;
   };
 
   const isValidateImgType = () => {
@@ -52,5 +46,5 @@ export function validateRecommendation(rec, settings) {
       return true;
     }
   };
-  return (noEmptyFields() && isValidateURL() && isValidateImgType());
+  return noEmptyFields() && isValidateURL() && isValidateImgType();
 }

@@ -1,25 +1,16 @@
-import fs from 'fs';
-import path from 'path';
-
-import {it, expect, describe, vi} from 'vitest';
-import {Window} from 'happy-dom';
-
-const htmlDocPath = path.join(process.cwd(), 'index.html');
-const htmlDoc = fs.readFileSync(htmlDocPath, 'utf8').toString();
+import fs from "fs";
+import path from "path";
+import { it, expect, vi } from "vitest";
+import { Window } from "happy-dom";
+const htmlDocPath = path.join(process.cwd(), "test-index.html");
+const htmlDoc = fs.readFileSync(htmlDocPath, "utf8").toString();
 const window = new Window();
 const document = window.document;
 document.write(htmlDoc);
-vi.stubGlobal('document', document);
+vi.stubGlobal("document", document);
+import TEST_SETTINGS from "./tests-settings/widgetTestsSettings.json"
 
-describe('startWidget() should create a full widget with the correct settings', () => {
-
-it('should locate a div with a id of widget', ()=>{
-  const widget = document.querySelector('#widget');
+it(`should locate a div with a id of ${TEST_SETTINGS.HTMLwidgetId}`, () => {
+  const widget = document.querySelector(`#${TEST_SETTINGS.HTMLwidgetId}`);
   expect(widget).not.toBeNull();
-})
-
-it('should have the right header', ()=>{});
-it('should have the right text color', ()=>{});
-it('should have the right background color', ()=>{});
-it('should have only filtered recs', ()=>{});
 });

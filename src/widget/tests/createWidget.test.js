@@ -6,7 +6,7 @@ import {Window} from 'happy-dom';
 import { createWidget } from '../helper/createWidget';
 import TEST_DATA from "./tests-settings/testsMockData.json";
 import TEST_SETTINGS from "./tests-settings/widgetTestsSettings.json";
-const htmlDocPath = path.join(process.cwd(), 'index.html');
+const htmlDocPath = path.join(process.cwd(), 'test-index.html');
 const htmlDoc = fs.readFileSync(htmlDocPath, 'utf8').toString();
 const window = new Window();
 const document = window.document;
@@ -15,7 +15,7 @@ vi.stubGlobal('document', document);
 
 describe('testing createWidget()', () => {
 
-  const TEST_WIDGET = document.querySelector('#widget');
+  const TEST_WIDGET = document.querySelector(`#${TEST_SETTINGS.HTMLwidgetId}`);
   createWidget(TEST_DATA, TEST_WIDGET, TEST_SETTINGS);
 
   it('should color the widget text', () => {

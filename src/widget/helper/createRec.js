@@ -1,17 +1,15 @@
-function createThumb(rec) {
+export function createThumb(rec, element) {
   switch (rec.origin) {
     case "sponsored":
-      return `<div class="rec-thumb" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
-      </div>`;
+      return `<${element.thumbElementType} class="${element.thumbElementClass}" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
+      </${element.thumbElementType}>`;
     case "organic":
-      return `<div class="rec-thumb" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
-        </div>`;
-    case "failed-image":
-      return `<div class="rec-thumb" style="background-image:`
+      return `<${element.thumbElementType} class="${element.thumbElementClass}" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
+      </${element.thumbElementType}>`;
     //Add more cases for new recommendations types
     default:
-      return `<div class="rec-thumb" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
-        </div>`;
+      return `<${element.thumbElementType} class="${element.thumbElementClass}" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
+      </${element.thumbElementType}>`;
   }
 }
 
@@ -21,7 +19,7 @@ export function createRecommendation(rec, element) {
   recElement.id = rec.id;
   recElement.innerHTML = `
         <a href="${rec.url}" ${element.outboundLink ? 'target="_blank"' : ""}>
-          ${createThumb(rec)}
+          ${createThumb(rec, element)}.
           ${
             element.title
               ? `<div class="rec-title">
