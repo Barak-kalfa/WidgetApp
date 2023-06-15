@@ -7,6 +7,6 @@ export async function getData(settings) {
     return resData;
   } catch (e) {
     console.log("getData:", e.message);
-    // return {id: "getDataError", list: []}
   }
 }
+  
