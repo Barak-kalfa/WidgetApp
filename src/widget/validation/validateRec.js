@@ -37,7 +37,7 @@ export function validateRecommendation(rec, settings) {
   };
 
   const isValidThumbnailType = () => {
-    if (!/\.(jpeg|jpg|png|gif|svg)\b/i.test(rec.thumbnail[0].url)) {
+    if (!/\.(jpeg|jpg|png|gif|svg|mp4)\b/i.test(rec.thumbnail[0].url)) {
       rec.error = "Thumbnail file type not supported";
       recordError(rec);
       return settings.type[rec.origin].showWithoutImg;

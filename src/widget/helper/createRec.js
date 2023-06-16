@@ -14,7 +14,7 @@ export function createThumb(rec, element) {
 
   insertURL(rec.thumbnail[0].url);
   switch (rec.origin) {
-    case "NEW_ORIGIN_TYPE":
+    case "REPLACE_WITH_ORIGIN_TYPE":
     // return new element
     default:
       return `<${element.thumbElementType} class="${element.thumbElementClass}"
@@ -31,7 +31,7 @@ export function createRecommendation(rec, element) {
   recElement.classList.add(element.className);
   recElement.id = rec.id;
   switch (rec.origin) {
-    case "NEW_ORIGIN_TYPE":
+    case "REPLACE_WITH_ORIGIN_TYPE":
     // recElement.innerHTML = ` BUILD NEW ELEMENT `
     // break;
     default:
