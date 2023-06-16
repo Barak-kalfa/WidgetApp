@@ -17,10 +17,10 @@ export function validateRecommendation(rec, settings) {
     return true;
   };
 
-  const isValidateURL = () => {
+  const isValidateURL = (url) => {
     try {
       const http = new XMLHttpRequest();
-      http.open("HEAD", rec.url, false);
+      http.open("HEAD", url, false);
       http.send();
       if (http.status != 404) {
         return true;
@@ -37,13 +37,22 @@ export function validateRecommendation(rec, settings) {
   };
 
   const isValidThumbnailType = () => {
-    if (!/\.(jpeg|jpg|png|gif|svg|mp4)\b/i.test(rec.thumbnail[0].url)) {
-      rec.error = "Thumbnail file type not supported";
-      recordError(rec);
-      return settings.type[rec.origin].showWithoutImg;
-    } else {
-      return true;
+    if (
+      /^https?:\/\/.+\/.+\.([jJ][pP][eE]?[gG]|[pP][nN][gG]|[gG][iI][fF]|[bB][mM][pP])$/.test(
+        rec.thumbnail[0].url
+      )
+    ) {
+      if (isValidateURL(rec.thumbnail[0].url)) {
+        return true;
+      } else {
+        rec.error = "Thumbnail url invalid";
+        recordError(rec);
+        return settings.type[rec.origin].showWithoutImg;
+      }
     }
+    rec.error = "Thumbnail file url/type not supported";
+    recordError(rec);
+    return settings.type[rec.origin].showWithoutImg;
   };
-  return noEmptyFields() && isValidateURL() && isValidThumbnailType();
+  return noEmptyFields() && isValidateURL(rec.url) && isValidThumbnailType();
 }

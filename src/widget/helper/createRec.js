@@ -1,15 +1,13 @@
 export function createThumb(rec, element) {
-  const thumbAttributes = [...element.thumbElementAttributes];
+  let thumbMediaRef = element.thumbElementMediaRef;
 
   const insertURL = (url) => {
-    for (let i = 0; i < thumbAttributes.length; i++) {
-      if (thumbAttributes[i].indexOf("THUMB_URL") !== -1) {
-        const splitAttr = thumbAttributes[i].split(" ");
+      if (thumbMediaRef.indexOf("THUMB_URL") !== -1) {
+        const splitAttr = thumbMediaRef.split(" ");
         splitAttr[splitAttr.indexOf("THUMB_URL")] = url;
         const attrWithURL = splitAttr.join("");
-        thumbAttributes[i] = attrWithURL;
+        thumbMediaRef = attrWithURL;
       }
-    }
   };
 
   insertURL(rec.thumbnail[0].url);
@@ -17,12 +15,7 @@ export function createThumb(rec, element) {
     case "REPLACE_WITH_ORIGIN_TYPE":
     // return new element
     default:
-      return `<${element.thumbElementType} class="${element.thumbElementClass}"
-                    ${
-                      element.thumbElementAttributes.length > 0 &&
-                      thumbAttributes.join(" ")
-                    }>
-                  </${element.thumbElementType}>`;
+      return `<${element.thumbElementType} class="${element.thumbElementClass}" ${thumbMediaRef}></${element.thumbElementType}>`;
   }
 }
 
