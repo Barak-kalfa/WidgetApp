@@ -1,17 +1,22 @@
 export function createThumb(rec, element) {
-  switch (rec.origin) {
-    case "sponsored":
-      return `<${element.thumbElementType} class="${element.thumbElementClass}" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
+  const thumbAttributes = [...element.thumbElementAttributes];
+
+  const insertURL = (url) => {
+    for (let i = 0; i < thumbAttributes.length; i++) {
+      if (thumbAttributes[i].indexOf("THUMB_URL") !== -1) {
+        const splitAttr = thumbAttributes[i].split(" ");
+        splitAttr[splitAttr.indexOf("THUMB_URL")] = url;
+        const attrWithURL = splitAttr.join("");
+        thumbAttributes[i] = attrWithURL;
+      }
+    }
+  };
+
+  insertURL(rec.thumbnail[0].url);
+
+  return `<${element.thumbElementType} class="${element.thumbElementClass}"
+   ${element.thumbElementAttributes.length > 0 && thumbAttributes.join(" ")}>
       </${element.thumbElementType}>`;
-    case "organic":
-      return `<${element.thumbElementType} class="${element.thumbElementClass}" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
-      </${element.thumbElementType}>`;
-    case "new":
-      console.log("New");
-      return `<${element.thumbElementType} class="${element.thumbElementClass}" ${element.thumbElementAttributes && element.thumbElementAttributes.join(" ")}>
-      </${element.thumbElementType}>`;
-    //Add more cases for new recommendations types
-  }
 }
 
 export function createRecommendation(rec, element) {
@@ -27,7 +32,7 @@ export function createRecommendation(rec, element) {
           <p>${rec.name}</p>
           </div>`
               : ""
-            }
+          }
           ${
             element.footer
               ? `<div class="rec-footer">

@@ -36,14 +36,14 @@ export function validateRecommendation(rec, settings) {
     }
   };
 
-  const isValidateThumbnailType = () => {
+  const isValidThumbnailType = () => {
     if (!/\.(jpeg|jpg|png|gif|svg)\b/i.test(rec.thumbnail[0].url)) {
-      rec.error = "Image file not supported";
+      rec.error = "Thumbnail file type not supported";
       recordError(rec);
       return settings.type[rec.origin].showWithoutImg;
     } else {
       return true;
     }
   };
-  return noEmptyFields() && isValidateURL() && isValidateThumbnailType();
+  return noEmptyFields() && isValidateURL() && isValidThumbnailType();
 }
