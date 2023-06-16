@@ -1,8 +1,10 @@
 import { getData } from "./data/widgetData.js";
-import { startWidget } from "./helper/startWidget.js";
-import settings from "./settings/widgetSettings.json" assert {type: 'json'};
+import { createWidget } from "./helper/createWidget.js";
+import settings from "./settings/widgetSettings.json" assert { type: "json" };
 
-
-const widget = document.querySelector(".widget");
-const widgetData = await getData(settings)
-startWidget(widgetData, widget, settings);
+async function startWidget(settings) {
+  const widget = document.getElementById(settings.HTMLwidgetId);
+  const widgetData = await getData(settings);
+  createWidget(widgetData, widget, settings);
+}
+startWidget(settings);

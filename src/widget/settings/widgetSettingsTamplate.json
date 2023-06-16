@@ -1,0 +1,38 @@
+{
+  "HTMLwidgetId": null,
+  "innerElementId": null,
+  "header": null,
+  "textColor": null,
+  "backgroundColor": null,
+  "typeFilter": [null],
+  "api": {
+    "publisherId": null,
+    "appType": null,
+    "appApiKey": null,
+    "sourceId": null
+  },
+  "type": {
+    "organic": {
+      "elementType": null,
+      "className": null,
+      "thumbElementType": null,
+      "thumbElementClass": null,
+      "thumbElementMediaRef": null,
+      "title": null,
+      "footer": null,
+      "outboundLink": null,
+      "showWithoutImg": null
+    },
+    "sponsored": {
+      "elementType": null,
+      "className": null,
+      "thumbElementType": null,
+      "thumbElementClass": null,
+      "thumbElementMediaRef": null,
+      "title": null,
+      "footer": null,
+      "outboundLink": null,
+      "showWithoutImg": null
+    }
+  }
+}
