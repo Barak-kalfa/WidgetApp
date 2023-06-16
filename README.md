@@ -17,33 +17,33 @@ Setting up the widget:
 
 Settings Legend:
   
-  HTMLwidgetId: "WIDGET ID AS IN HTML FILE", (string - e.g. "bottom-widget")
-  "innerElementId": "PICK INNER ELEMENT ID", (string - e.g. "inner-element")
-  "header": "PICK WIDGET HEADER", (string - e.g. "Recommendations for you:")
-  "textColor": "PICK COLOR FOR WIDGET TEXT", (string - e.g. any css color)
-  "backgroundColor": "PICK WIDGET BACKGROUND COLOR", (string - e.g. any css color)
-  "typeFilter": ["PICK REC TYPES TO RENDER"], (string - e.g. "organic" *can have more then one type)
-
-  api:
-    "publisherId": "API DETAILS", (string)
-    "appType": "API DETAILS", (string)
-    "appApiKey": "API DETAILS", (string)
-    "sourceId": "API DETAILS", (string)
+  "HTMLwidgetId": "WIDGET ID AS IN HTML FILE", (string - e.g. "bottom-widget")  
+  "innerElementId": "PICK INNER ELEMENT ID", (string - e.g. "inner-element")  
+  "header": "PICK WIDGET HEADER", (string - e.g. "Recommendations for you:")  
+  "textColor": "PICK COLOR FOR WIDGET TEXT", (string - e.g. any css color)  
+  "backgroundColor": "PICK WIDGET BACKGROUND COLOR", (string - e.g. any css color)  
+  "typeFilter": ["PICK REC TYPES TO RENDER"], (string - e.g. "organic" *can have more then one type)  
+  
+  api:  
+    "publisherId": "API DETAILS", (string)  
+    "appType": "API DETAILS", (string)  
+    "appApiKey": "API DETAILS", (string)  
+    "sourceId": "API DETAILS", (string)  
 
   type:
       "organic": 
-        "elementType": "PICK ORGANIC ELEMENT TYPE", (string - e.g. "div").
-        "className": "PICK ORGANIC ELEMENT CLASS", (string - e.g. "rec").
-        "thumbElementType": "PICK THUMBNAIL ELEMENT TYPE", (string - e.g. "div").
-        "thumbElementClass": "PICK THUMBNAIL ELEMENT CLASS", (string - e.g. "rec-thumb").
-        "thumbElementMediaRef: "PICK IMG/VIDEO SOURCE URL ELEMENT REF AND INSERT " THUMB_URL " (notice spaces at start and end), (string - e.g. "src=' THUMB_URL '").
-        "title": BOOLEAN.
-        "footer": BOOLEAN.
-        "outboundLink": BOOLEAN.
-        "showWithoutImg": BOOLEAN.
+        "elementType": "PICK ORGANIC ELEMENT TYPE", (string - e.g. "div").  
+        "className": "PICK ORGANIC ELEMENT CLASS", (string - e.g. "rec").  
+        "thumbElementType": "PICK THUMBNAIL ELEMENT TYPE", (string - e.g. "div").  
+        "thumbElementClass": "PICK THUMBNAIL ELEMENT CLASS", (string - e.g. "rec-thumb").  
+        "thumbElementMediaRef: "PICK IMG/VIDEO SOURCE URL ELEMENT REF AND INSERT " THUMB_URL " (notice spaces at start and end), (string - e.g. "src=' THUMB_URL '").  
+        "title": BOOLEAN.  
+        "footer": BOOLEAN.  
+        "outboundLink": BOOLEAN.  
+        "showWithoutImg": BOOLEAN.  
   
-      "sponsored": 
-        "elementType": "PICK ORGANIC ELEMENT TYPE", (string - e.g. "div").
+      "sponsored":   
+        "elementType": "PICK ORGANIC ELEMENT TYPE", (string - e.g. "div").  
         "className": "PICK ORGANIC ELEMENT CLASS", (string - e.g. "rec").
         "thumbElementType": "PICK THUMBNAIL ELEMENT TYPE", (string - e.g. "div").
         "thumbElementClass": "PICK THUMBNAIL ELEMENT CLASS", (string - e.g. "rec-thumb").
