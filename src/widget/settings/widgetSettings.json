@@ -31,6 +31,17 @@
       "footer": true,
       "outboundLink": true,
       "showWithoutImg": false
+    },
+    "new": {
+      "elementType": "div",
+      "className": "rec",
+      "thumbElementType": "div",
+      "thumbElementClass": "rec-thumb",
+      "thumbElementAttributes": ["style=`background-image: url('./src/images/default-background.svg')`"],
+      "title": true,
+      "footer": true,
+      "outboundLink": true,
+      "showWithoutImg": false
     }
   }
 }

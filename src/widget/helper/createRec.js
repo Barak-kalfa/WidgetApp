@@ -6,6 +6,10 @@ export function createThumb(rec, element) {
     case "organic":
       return `<${element.thumbElementType} class="${element.thumbElementClass}" style="background-image: url(${rec.thumbnail[0].url}), url('./src/images/default-background.svg')">
       </${element.thumbElementType}>`;
+    case "new":
+      console.log("New");
+      return `<${element.thumbElementType} class="${element.thumbElementClass}" ${element.thumbElementAttributes && element.thumbElementAttributes.join(" ")}>
+      </${element.thumbElementType}>`;
     //Add more cases for new recommendations types
   }
 }

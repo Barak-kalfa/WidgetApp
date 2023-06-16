@@ -1,3 +1,4 @@
-make api url dynamic with regex
+check thumbElementAttributes
+make api url dynamic for more widgets sources
 write nice md file for instructions
 Add pagination (expand mock data)
