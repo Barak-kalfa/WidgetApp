@@ -1,7 +1,7 @@
 {
   "HTMLwidgetId": "widget",
   "innerElementId": "w-box",
-  "header": "You might also be interested in:",
+  "header": "You Might Also Be Interested In:",
   "textColor": "black",
   "backgroundColor": "transparent",
   "typeFilter": ["sponsored"],
