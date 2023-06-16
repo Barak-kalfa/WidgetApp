@@ -30,15 +30,15 @@ Settings Legend:
 
   type:
       "organic": 
-        "elementType": "PICK ORGANIC ELEMENT TYPE", (string)
-        "className": "PICK ORGANIC ELEMENT CLASS", (string)
-        "thumbElementType": "PICK THUMBNAIL ELEMENT TYPE", (string)
-        "thumbElementClass": "PICK THUMBNAIL ELEMENT CLASS", (string)
-        "title": BOOLEAN,
-        "footer": BOOLEAN,
-        "outboundLink": BOOLEAN,
-        "showWithoutImg": BOOLEAN
-  ,
+        "elementType": "PICK ORGANIC ELEMENT TYPE", (string).
+        "className": "PICK ORGANIC ELEMENT CLASS", (string).
+        "thumbElementType": "PICK THUMBNAIL ELEMENT TYPE", (string).
+        "thumbElementClass": "PICK THUMBNAIL ELEMENT CLASS", (string).
+        "title": BOOLEAN.
+        "footer": BOOLEAN.
+        "outboundLink": BOOLEAN.
+        "showWithoutImg": BOOLEAN.
+  
       "sponsored": 
         "elementType": "PICK ORGANIC ELEMENT TYPE", (string)
         "className": "PICK ORGANIC ELEMENT CLASS", (string)
@@ -60,7 +60,7 @@ How to use the widget settings:
 8. Custom recommendations types to your liking.
 The widget is ready to go.
 
-**** YOU CAN ADD MORE THAN ONE WIDGET WITH DIFFERENT DATA BY: 
+**** YOU CAN ADD MORE THAN ONE WIDGET WITH DIFFERENT SETTINGS BY: 
 1. Add another HTML element with a new ID to your html file.
 2. Create copy of widgetSettings.json file and rename it.
 3. Customize new settings.
