@@ -17,7 +17,7 @@ Setting up the widget:
 
 Settings Legend:
   
-  "HTMLwidgetId": "WIDGET ID AS IN HTML FILE", (string - e.g. "bottom-widget")
+  HTMLwidgetId: "WIDGET ID AS IN HTML FILE", (string - e.g. "bottom-widget")
   "innerElementId": "PICK INNER ELEMENT ID", (string - e.g. "inner-element")
   "header": "PICK WIDGET HEADER", (string - e.g. "Recommendations for you:")
   "textColor": "PICK COLOR FOR WIDGET TEXT", (string - e.g. any css color)
